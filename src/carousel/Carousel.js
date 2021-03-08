@@ -1,6 +1,6 @@
 import React, {createRef, useState} from 'react';
 import './carousel.css';
-import imageArray from './img/image';
+import imageArray from '../img/image';
 
 function Carousel() {
 
