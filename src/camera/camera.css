@@ -31,6 +31,7 @@
 
 .menu-bar::-webkit-scrollbar {
     width: 0;
+    height: 0;
 }
 
 .menu-bar div {
@@ -65,4 +66,5 @@
     opacity: 2;
     width: 13px;
     height: 13px;
+    margin-top: 25px;
 }
