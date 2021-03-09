@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.Modal {
+    position: fixed;
+    bottom: -150vh;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.15);
+    left: 0;
+    padding: 0 10px;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+  }
+  
+  .Modal.Show {
+    bottom: 0;
+  }
+
+  .Modal button {
+      width: 95%;
+      margin: 10px 0;
+      height: 48px;
+      color: white;
+      border-radius: 10px;
+      border-color: white;
+      text-align: left;
+  }
+
+  .slide span.icon {
+    background: url(img/shortcut.png) no-repeat;
+    background-size: 30px 30px;
+    float: left;
+    width: 30px;
+    height: 30px
+}

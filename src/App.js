@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Carousel from './carousel/Carousel';
 // import Home from './Home';
@@ -9,12 +8,14 @@ import {
   Link
 } from "react-router-dom";
 import Camera from './camera/Camera';
+import Home from './Home';
+import Slider from './footer/slider';
 
 function App() {
   return (
     <Router>
     <div>
-      <nav>
+      {/* <nav>
         <ul>
         <li>
             <Link to="/cameraAnimation">cameraAnimation</Link>
@@ -23,7 +24,7 @@ function App() {
             <Link to="/carousel">carousel</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
@@ -33,6 +34,12 @@ function App() {
         </Route>
         <Route path="/cameraAnimation">
           <Camera />
+        </Route>
+        <Route path="/SlideFooter">
+          <Slider />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </div>
