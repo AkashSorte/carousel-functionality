@@ -15,6 +15,9 @@ function Camera() {
     const [featureState, setFeatureState] =useState(featureArray);
     const [btnColor, setBtnColor] =useState("white");
 
+    const [capture, setCapture] =useState(false);
+
+
     useEffect(() => {
        const photo = featureArray.find(x => x.className && x.className === 'active');
        photo && photo.ref && photo.ref.current.scrollIntoView({
@@ -38,9 +41,17 @@ function Camera() {
     
     }
 
+    function capturePic() {
+        setCapture(true);
+
+        setTimeout(() => {
+            setCapture(false);
+        }, 500)
+    }
+
     return (
-        <div className="cam">
-            <div style={{flex:4}}>Test</div>
+        <div className={capture ? "cam flash" : "cam"}>
+            <div style={{flex:4}}></div>
             <div className="cam-menu menu">
                     <div className="menu-bar">
                         <div style={{padding:"0 16%"}}/>
@@ -48,7 +59,7 @@ function Camera() {
                         <div style={{padding:"0 20%"}}/>
                     </div>
                     <div className="capture">
-                        <button className="capture-button" style={{backgroundColor: btnColor}}></button>
+                        <button className="capture-button" style={{backgroundColor: btnColor}} onClick={capturePic}></button>
                     </div>
             </div>
         </div>
