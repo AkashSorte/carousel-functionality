@@ -16,14 +16,11 @@ function Camera() {
     const [btnColor, setBtnColor] =useState("white");
 
     const [capture, setCapture] =useState(false);
+    const [captureCount, setCaptureCount] = useState(0);
 
 
     useEffect(() => {
-       const photo = featureArray.find(x => x.className && x.className === 'active');
-       photo && photo.ref && photo.ref.current.scrollIntoView({
-            behavior: "smooth",
-            inline: "center"
-        });
+        getSelected('photo');
     },[]);
 
     function getSelected(currentId) {
@@ -38,12 +35,13 @@ function Camera() {
              return x;
         });
         setFeatureState(features);
-    
     }
 
     function capturePic() {
         setCapture(true);
 
+        let picCount = captureCount+1;
+        setCaptureCount(picCount);
         setTimeout(() => {
             setCapture(false);
         }, 500)
@@ -51,7 +49,7 @@ function Camera() {
 
     return (
         <div className={capture ? "cam flash" : "cam"}>
-            <div style={{flex:4}}></div>
+            <div style={{flex:4}}></div><div class={capture ? "click" : "test"}>ashjdf</div>
             <div className="cam-menu menu">
                     <div className="menu-bar">
                         <div style={{padding:"0 16%"}}/>
@@ -60,6 +58,7 @@ function Camera() {
                     </div>
                     <div className="capture">
                         <button className="capture-button" style={{backgroundColor: btnColor}} onClick={capturePic}></button>
+                        {captureCount && captureCount > 0 && <div className="badges"><div className="badge-count">{captureCount}</div></div>}
                     </div>
             </div>
         </div>
