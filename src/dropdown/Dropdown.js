@@ -44,7 +44,7 @@ const Dropdown = () => {
             {open && <div className="dropdown">
                 <ul> 
                   {printerOption.map((printer) => {
-                    return <li key={printer.key}><div className="options" onTouchEnd={() => selectPrinter(printer.key)}>
+                    return <li key={printer.key} style={{borderBottom: "0.5px solid lightgray"}}><div className="options" onTouchEnd={() => selectPrinter(printer.key)}>
                         <div className="options-img" style={{backgroundImage: `url("${printer.img}")`}}/>
                         <div className="options-value">{printer.value}</div>
                         </div>
