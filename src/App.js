@@ -10,6 +10,7 @@ import {
 import Camera from './camera/Camera';
 import Home from './Home';
 import Slider from './footer/slider';
+import Dropdown from './dropdown/Dropdown';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path="/SlideFooter">
           <Slider />
+        </Route>
+        <Route path="/Dropdown">
+          <Dropdown />
         </Route>
         <Route path="/">
           <Home />

@@ -17,6 +17,9 @@ function Home() {
                 <li>
                     <Link to="/SlideFooter">SlideFooter</Link>
                 </li>
+                <li>
+                    <Link to="/Dropdown">Dropdown</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

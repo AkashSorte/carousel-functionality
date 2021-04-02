@@ -1,0 +1,86 @@
+.wrapper {
+    width: 86vw;
+    padding: 7%;
+    height: 90vh;
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .button {
+    display: flex;
+    justify-content: space-between;  
+    padding: 3%;
+    width: 80%;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: 0;
+    font-size: 18px;
+    text-align: left;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 50px;
+  }
+
+  .dropdown {
+    position: absolute;
+    left: 0;
+    width: 80%;
+    z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 8px 12px;
+  }
+  
+  li:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+    cursor: pointer;
+  }
+
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: 2% 0;
+  }
+
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  .options {
+    display: flex;
+  }
+
+  .options-value {
+    margin-left: 8%;
+  }
+
+  .options-img {
+    width: 35px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./img/print.png");
+  }
