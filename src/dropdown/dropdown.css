@@ -14,7 +14,7 @@
   .button {
     display: flex;
     justify-content: space-between;  
-    padding: 3%;
+    padding: 2% 3%;
     width: 80%;
     background-color: #fff;
     color: #333;
@@ -76,11 +76,25 @@
     margin-left: 8%;
   }
 
+  .options-value .selected {
+    font-size: 17px;
+  }
+
   .options-img {
     width: 35px;
-    height: 30px;
+    height: 35px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("./img/print.png");
+  }
+
+  .selected-caption {
+    color: lightgrey;
+    font-size: 14px;
+  }
+
+  .place-holder {
+    height: 80%;
+    padding: 2%;
   }

@@ -37,8 +37,11 @@ const Dropdown = () => {
             <button type="button" className="button" onTouchEnd={handleButtonClick}>
               {selectedPrinter && selectedPrinter.key ? <div className="options" style={{ width: "100%"}}>
                         <div className="options-img" style={{backgroundImage: `url("${selectedPrinter.img}")`}}/>
-                        <div className="options-value">{selectedPrinter.value}</div>
-                        </div> :<div>Select Printer</div>} 
+                        <div className="options-value">
+                          <div className="selected-caption">Select Printer</div>
+                          <div className="selected">{selectedPrinter.value}</div>
+                        </div>
+                        </div> :<div className="place-holder">Select Printer</div>} 
               <i className={`arrow ${open? "up" : "down"}`}></i>
             </button>
             {open && <div className="dropdown">
