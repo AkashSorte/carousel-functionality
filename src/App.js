@@ -11,6 +11,7 @@ import Camera from './camera/Camera';
 import Home from './Home';
 import Slider from './footer/slider';
 import Dropdown from './dropdown/Dropdown';
+import EditableField from './editableField/EditableField';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/Dropdown">
           <Dropdown />
+        </Route>
+        <Route path="/editable">
+          <EditableField />
         </Route>
         <Route path="/">
           <Home />

@@ -20,6 +20,9 @@ function Home() {
                 <li>
                     <Link to="/Dropdown">Dropdown</Link>
                 </li>
+                <li>
+                    <Link to="/editable">Editable Field</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

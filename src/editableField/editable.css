@@ -1,0 +1,80 @@
+.field-wrapper {
+    height: 100%;
+}
+
+.modal-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding-top: 35%;
+}
+
+.editable-wrapper {
+    width: 85%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border: 6px solid #4b00d9;
+    padding: 5px;
+    margin: 15px;
+}
+
+.editable-wrapper div {
+    height: 80%;
+}
+
+.editable-wrapper .edit-icon {
+    height: 100%;
+}
+
+.editable-wrapper .value-field {
+    margin: 5px 15px;
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal {
+    width: 65%;
+    background: white;
+    border: 1px solid #ccc;
+    transition: 1.5s ease-out;
+    box-shadow: 0rem 1rem 2rem #888888;
+    filter: blur(0);
+    transform: scale(1);
+    margin: auto;
+    height: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.modal input {
+    width: 80%;
+    height: 23px;
+    margin-top: 10px;
+}
+
+.modal h2 {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0;
+}
+
+.actions {
+    padding: 0.5rem 1rem;
+}
+
+.actions button {
+    border: 0;
+    background: #78f89f;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1;
+}
