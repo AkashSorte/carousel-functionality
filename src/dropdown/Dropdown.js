@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './dropdown.css'
 import images from './img/image';
 
@@ -6,6 +6,16 @@ const Dropdown = () => {
 
     const [open, setOpen] = useState(false);
     const [selectedPrinter, setSelectedPrinter] = useState({});
+    const dropdownWrapper = useRef(null);
+
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (dropdownWrapper.current && !dropdownWrapper.current.contains(event.target)) {
+          setOpen(false);
+        }
+      }
+      document.addEventListener("touchend", handleClickOutside);
+    }, [dropdownWrapper])
 
     function handleButtonClick() {
         setOpen(!open);
@@ -33,7 +43,7 @@ const Dropdown = () => {
 
     return (
         <div className="wrapper">
-          <div className="dropdown-container">
+          <div className="dropdown-container" ref={dropdownWrapper}>
             <button type="button" className="button" onTouchEnd={handleButtonClick}>
               {selectedPrinter && selectedPrinter.key ? <div className="options" style={{ width: "100%"}}>
                         <div className="options-img" style={{backgroundImage: `url("${selectedPrinter.img}")`}}/>
