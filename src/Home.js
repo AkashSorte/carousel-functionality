@@ -23,6 +23,9 @@ function Home() {
                 <li>
                     <Link to="/editable">Editable Field</Link>
                 </li>
+                <li>
+                    <Link to="/contentLoader">Content Loader</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

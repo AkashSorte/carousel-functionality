@@ -12,6 +12,7 @@ import Home from './Home';
 import Slider from './footer/slider';
 import Dropdown from './dropdown/Dropdown';
 import EditableField from './editableField/EditableField';
+import ContentLoader from './contentLoader/ContentLoader';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route path="/editable">
           <EditableField />
+        </Route>
+        <Route path="/contentLoader">
+          <ContentLoader />
         </Route>
         <Route path="/">
           <Home />
