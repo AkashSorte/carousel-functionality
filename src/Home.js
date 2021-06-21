@@ -26,6 +26,9 @@ function Home() {
                 <li>
                     <Link to="/contentLoader">Content Loader</Link>
                 </li>
+                <li>
+                    <Link to="/breadCrumbs">BreadCrumb's Demo</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

@@ -1,61 +1,103 @@
+import React from "react";
 import './App.css';
-import Carousel from './carousel/Carousel';
-// import Home from './Home';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import Carousel from './carousel/Carousel';
 import Camera from './camera/Camera';
 import Home from './Home';
 import Slider from './footer/slider';
 import Dropdown from './dropdown/Dropdown';
 import EditableField from './editableField/EditableField';
 import ContentLoader from './contentLoader/ContentLoader';
+import Breadcrumbs from "./BreadCrumbs";
+import {Crumbs,Furniture, LivingRoom, sofaBed} from './demoBreadCrumb/Crumb'
 
 function App() {
+  const routes = [
+    {
+      path: "/carousel",
+      name: "Carousel", 
+      Component: Carousel
+    }, {
+      path: "/cameraAnimation",
+      name: "Camera Animation", 
+      Component: Camera
+    }, {
+      path: "/SlideFooter",
+      name: "SlideFooter", 
+      Component: Slider
+    }, {
+      path: "/Dropdown",
+      name: "Dropdown", 
+      Component: Dropdown
+    }, {
+      path: "/editable",
+      name: "Editable Field", 
+      Component: EditableField
+    }, {
+      path: "/contentLoader",
+      name: "Content Loader", 
+      Component: ContentLoader
+    }, {
+      path: "/",
+      Component: Home
+    }, {
+      path: "/breadCrumbs",
+      name: "Home", 
+      Component: Crumbs
+    }, {
+      path: "/breadCrumbs/furniture",
+      name: "Furniture",
+      Component: Furniture
+    }, {
+      path: "/breadCrumbs/furniture/livingRoom",
+      name: "Living Room",
+      Component: LivingRoom
+    }, {
+      path: "/breadCrumbs/furniture/livingRoom/sofa",
+      name: "Sofa Bed",
+      Component: sofaBed
+    }
+  ];
   return (
+    <div>
     <Router>
     <div>
-      {/* <nav>
-        <ul>
-        <li>
-            <Link to="/cameraAnimation">cameraAnimation</Link>
-          </li>
-          <li>
-            <Link to="/carousel">carousel</Link>
-          </li>
-        </ul>
-      </nav> */}
-
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/carousel">
-          <Carousel />
-        </Route>
-        <Route path="/cameraAnimation">
-          <Camera />
-        </Route>
-        <Route path="/SlideFooter">
-          <Slider />
-        </Route>
-        <Route path="/Dropdown">
-          <Dropdown />
-        </Route>
-        <Route path="/editable">
-          <EditableField />
-        </Route>
-        <Route path="/contentLoader">
-          <ContentLoader />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+        {routes.map(({ path, name, Component }, key) => (
+          <Route
+            exact
+            path={path}
+            key={key}
+            render={props => {
+              const crumbs = routes
+                .filter(({ path }) => props.match.path.includes(path))
+                .map(({ path, ...rest }) => ({
+                  path: Object.keys(props.match.params).length
+                    ? Object.keys(props.match.params).reduce(
+                      (path, param) => path.replace(
+                        `:${param}`, props.match.params[param]
+                      ), path
+                      )
+                    : path,
+                  ...rest
+                }));
+              return (
+                <div>
+                  <Breadcrumbs crumbs={crumbs} />
+                  <Component {...props} />
+                </div>
+              );
+            }}
+          />
+        ))}
       </Switch>
     </div>
   </Router>
+  </div>
   );
 }
 
