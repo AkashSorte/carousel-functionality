@@ -29,6 +29,9 @@ function Home() {
                 <li>
                     <Link to="/breadCrumbs">BreadCrumb's Demo</Link>
                 </li>
+                <li>
+                    <Link to="/emailValidator">Email Validator Demo</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

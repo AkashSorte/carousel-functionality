@@ -14,6 +14,7 @@ import EditableField from './editableField/EditableField';
 import ContentLoader from './contentLoader/ContentLoader';
 import Breadcrumbs from "./BreadCrumbs";
 import {Crumbs,Furniture, LivingRoom, sofaBed} from './demoBreadCrumb/Crumb'
+import DemoEmailValidator from "./multiEmailInput/DemoEmailValidator";
 
 function App() {
   const routes = [
@@ -60,6 +61,10 @@ function App() {
       path: "/breadCrumbs/furniture/livingRoom/sofa",
       name: "Sofa Bed",
       Component: sofaBed
+    }, {
+      path: "/emailValidator",
+      name: "Email Validator",
+      Component: DemoEmailValidator
     }
   ];
   return (
