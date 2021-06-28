@@ -1,0 +1,24 @@
+.style-comp-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+}
+
+.content-wrap {
+  background-color: aquamarine;
+  height: 500px;
+  width: 60%; 
+}
+
+.content-wrap-override {
+    background-color: red;
+    height: 300px;
+    width: 50%; 
+}
+
+.background-override {
+    background-image: url("../img/ronaldo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 40px;
+}

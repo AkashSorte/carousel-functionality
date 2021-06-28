@@ -32,6 +32,9 @@ function Home() {
                 <li>
                     <Link to="/emailValidator">Email Validator Demo</Link>
                 </li>
+                <li>
+                    <Link to="/styleComponent">Style Component</Link>
+                </li>
                 </ul>
             </nav> 
         </div>

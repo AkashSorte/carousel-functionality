@@ -15,6 +15,7 @@ import ContentLoader from './contentLoader/ContentLoader';
 import Breadcrumbs from "./BreadCrumbs";
 import {Crumbs,Furniture, LivingRoom, sofaBed} from './demoBreadCrumb/Crumb'
 import DemoEmailValidator from "./multiEmailInput/DemoEmailValidator";
+import DemoContentWrapper from "./styleComponent/DemoContentWrapper";
 
 function App() {
   const routes = [
@@ -65,6 +66,10 @@ function App() {
       path: "/emailValidator",
       name: "Email Validator",
       Component: DemoEmailValidator
+    }, {
+      path: "/styleComponent",
+      name: "Style Component",
+      Component: DemoContentWrapper
     }
   ];
   return (
@@ -78,23 +83,24 @@ function App() {
             path={path}
             key={key}
             render={props => {
-              const crumbs = routes
-                .filter(({ path }) => props.match.path.includes(path))
-                .map(({ path, ...rest }) => ({
-                  path: Object.keys(props.match.params).length
-                    ? Object.keys(props.match.params).reduce(
-                      (path, param) => path.replace(
-                        `:${param}`, props.match.params[param]
-                      ), path
-                      )
-                    : path,
-                  ...rest
-                }));
+              // const crumbs = routes
+              //   .filter(({ path }) => props.match.path.includes(path))
+              //   .map(({ path, ...rest }) => ({
+              //     path: Object.keys(props.match.params).length
+              //       ? Object.keys(props.match.params).reduce(
+              //         (path, param) => path.replace(
+              //           `:${param}`, props.match.params[param]
+              //         ), path
+              //         )
+              //       : path,
+              //     ...rest
+              //   }));
               return (
-                <div>
-                  <Breadcrumbs crumbs={crumbs} />
-                  <Component {...props} />
-                </div>
+                // <div>
+                //   <Breadcrumbs crumbs={crumbs} />
+                //   <Component {...props} />
+                // </div>
+                <Component {...props} />
               );
             }}
           />
